@@ -23,3 +23,6 @@ app.use('/openai', require('./router'));
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+// export the express api
+module.exports = app;
+
