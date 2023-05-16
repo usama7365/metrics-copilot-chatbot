@@ -41,7 +41,7 @@ function HomePage() {
     setLoading(true);
     try {
       const response = await fetch(
-        "/openai/generateinfo",
+        "https://mealmetrics-copilot.vercel.app/openai/generateinfo",
         {
           method: "POST",
           headers: {
