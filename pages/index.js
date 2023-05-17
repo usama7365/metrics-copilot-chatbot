@@ -15,7 +15,15 @@ You can use the IconButton component to add an icon to the Toolbar.
 You can use the img tag to add an image to the IconButton component. 
 You can use the style prop to set the height of the image.
 
+
+q: I want to add each nutrition fact to a separate line. How do I do that? The data comes back as a string and lokks like this: 
+"\n\nCalories: 143 \nTotal Fat: 2.5 g \nSaturated Fat: 1.3 g \nTrans Fat: 0 g \nCholesterol: 5 mg \nSodium: 126 mg \nTotal Carbohydrate: 28.4 g \nDietary Fiber: 0.6 g \nSugars: 6.2 g \nProtein: 2.8 g"
+
+a: You can use the split method to split the string into an array of strings.
+You can use the map method to iterate over the array of strings and return a Typography component for each string.
+You can use the key prop to set a unique key for each Typography component.
 */
+
 
 import React, { useState, useEffect } from "react";
 import {
@@ -29,6 +37,7 @@ import {
 } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
 import Header from "../components/Header";
+import NutritionFacts from "../components/NutritionFacts";
 
 function HomePage() {
   const [recipe, setRecipe] = useState("");
@@ -41,7 +50,7 @@ function HomePage() {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://mealmetrics-copilot.vercel.app/api/server",
+        "http://localhost:8080/openai/generateinfo",
         {
           method: "POST",
           headers: {
@@ -56,7 +65,7 @@ function HomePage() {
 
       // display nutrition info
       if (nutrition.data) {
-        console.log(nutrition.data);
+        console.log(nutrition);
         setNutrition(nutrition.data);
         setLoading(false);
       } else {
@@ -78,8 +87,8 @@ function HomePage() {
     <>
       <Header />
       <Container maxWidth="md" style={{ marginTop: "40px" }}>
-        <Typography variant="h2" gutterBottom>
-          Find Nutrition Facts for any recipe{" "}
+        <Typography variant="h3" gutterBottom>
+          🍎 Find Nutrition Facts for any recipe
         </Typography>
         <Paper elevation={24} style={{ padding: "20px" }}>
           <form onSubmit={handleSubmit}>
@@ -124,9 +133,7 @@ function HomePage() {
               An error occurred: {error.errorMessage}
             </Typography>
           ) : nutrition ? (
-            <>
-              <Typography>{nutrition}</Typography>
-            </>
+            <NutritionFacts data={nutrition} />
           ) : null}
         </div>
       </Container>
