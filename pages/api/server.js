@@ -14,6 +14,9 @@ const PORT = 8080
 
 const app = express();
 
+// Allow cross-origin requests from all domains
+app.use(cors());
+
 // enable body parser to accept json data
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
