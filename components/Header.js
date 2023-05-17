@@ -5,13 +5,14 @@ import {
   Typography,
   IconButton,
 } from "@material-ui/core";
+import { ThemeProvider } from "@material-ui/core/styles";
 
 function Header() {
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="primary">
       <Toolbar>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
-          MealMetrics
+          MealMetrics 🍎
         </Typography>
         <IconButton edge="end" color="inherit">
           <img src="/logo.png" alt="Logo" style={{ height: "40px" }} />

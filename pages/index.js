@@ -24,7 +24,6 @@ You can use the map method to iterate over the array of strings and return a Typ
 You can use the key prop to set a unique key for each Typography component.
 */
 
-
 import React, { useState, useEffect } from "react";
 import {
   Button,
@@ -36,8 +35,11 @@ import {
   Typography,
 } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
+import { ThemeProvider } from "@material-ui/core/styles";
 import Header from "../components/Header";
 import NutritionFacts from "../components/NutritionFacts";
+import Footer from "../components/Footer";
+import theme from "../utils/theme";
 
 function HomePage() {
   const [recipe, setRecipe] = useState("");
@@ -84,7 +86,7 @@ function HomePage() {
   }
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Header />
       <Container maxWidth="md" style={{ marginTop: "40px" }}>
         <Typography variant="h3" gutterBottom>
@@ -98,7 +100,13 @@ function HomePage() {
                   value={recipe}
                   onChange={(e) => setRecipe(e.target.value)}
                   placeholder="Enter recipe to get nutrition facts"
-                  style={{ width: "98%", maxWidth: "850px", minHeight: "200px", padding: "10px" }} />
+                  style={{
+                    width: "98%",
+                    maxWidth: "850px",
+                    minHeight: "200px",
+                    padding: "10px",
+                  }}
+                />
               </Grid>
               <Grid item xs={12}>
                 <Button
@@ -137,7 +145,8 @@ function HomePage() {
           ) : null}
         </div>
       </Container>
-    </>
+      <Footer />
+    </ThemeProvider>
   );
 }
 
