@@ -88,7 +88,7 @@ function HomePage() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <Container maxWidth="md" style={{ marginTop: "40px" }}>
+      <Container maxWidth="md" style={{ marginTop: "40px", minHeight: "100vh", paddingBottom: "100px" }}>
         <Typography variant="h3" gutterBottom>
           🍎 Find Nutrition Facts for any recipe
         </Typography>
