@@ -19,4 +19,4 @@ Alternatively, you can clone the repository to your local machine and complete t
 
 You can input any recipe from the web or your favorite recipe! Have Fun! ♥️
 
-https://github.com/LadyKerr/mealmetrics-copilot/assets/47188731/a599a590-ee3b-4ee0-985e-15bca3a8d39b
+<img width="1512" alt="mealmetrics-app" src="https://github.com/LadyKerr/mealmetrics-copilot/assets/47188731/7156c437-08a4-4ef4-8927-839ca6a70c80">
