@@ -7,20 +7,22 @@
   "updateContentCommand": "npm install && npm run build",
   "postCreateCommand": "",
   "postAttachCommand": {
-    "server": "npm run dev"
+    "server": "npm run devserver",
+    "app": "npm run dev"
   },
   "customizations": {
     "codespaces": {
-      "openFiles": [
-        "pages/index.js"
-      ]
+      "openFiles": ["pages/index.js"]
     }
   },
   "portsAttributes": {
     "3000": {
       "label": "Application",
       "onAutoForward": "openPreview"
+    },
+    "8080": {
+      "label": "Server"
     }
   },
-  "forwardPorts": [3000]
+  "forwardPorts": [3000, 8080]
 }
