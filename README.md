@@ -4,9 +4,7 @@
 
 ## Running the App
 
-You can click the _open in codespaces_ button above to get up and running easily.
-
-Alternatively, you can clone the repository to your local machine and complete the following steps:
+Clone the repository to your local machine and complete the following steps:
 
 1. Update the [.env.example](/.env.example) file to include your apikey
 2. Change the name of the file to `.env`
