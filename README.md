@@ -1,7 +1,5 @@
 # GPT-3 app built with Nextjs, React & GitHub Copilot
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/LadyKerr/mealmetrics-copilot?quickstart=1)
-
 ### Find the nutritional data for any recipe with AI 🤖
 
 ## Running the App
